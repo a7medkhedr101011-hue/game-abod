@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>لعبة عبود</title>
+<style>
+body {
+  background: #111827;
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding-top: 100px;
+}
+button {
+  background: #ffca28;
+  color: #111;
+  border: none;
+  border-radius: 20px;
+  padding: 35px 60px;
+  font-size: 30px;
+  font-weight: bold;
+}
+</style>
+</head>
+<body>
+<h1>لعبة عبود 😂</h1>
+<button onclick="speak()">عبود</button>
+<p id="message">اضغط على عبود!</p>
+<script>
+function speak() {
+  document.getElementById("message").textContent =
+    "آه دخل جامد براحه يا لطفي 😂";
+  if ("speechSynthesis" in window) {
+    const msg = new SpeechSynthesisUtterance(
+      "آه دخل جامد براحه يا لطفي"
+    );
+    msg.lang = "ar-EG";
+    speechSynthesis.speak(msg);
+  }
+}
+</script>
+</body>
+</html>
